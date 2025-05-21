@@ -21,7 +21,7 @@ function Contact() {
   return (
     <section className="max-w-5xl mx-auto md:mt-12 bg-white rounded-lg shadow p-8">
       <h2 className="text-2xl font-bold mb-6 text-gray-900 text-center">Contact Us</h2>
-      <p className="text-gray-700 text-center mb-10">
+      <p className="text-gray-700 text-center mb-10 max-w-3xl mx-auto">
         Have a question about our logistics solutions, need a quote, or want to discuss a custom project? 
         Fill out the form below and our team will respond promptly. We specialize in reliable, on-time delivery and tailored logistics services for businesses of all sizes.
       </p>
