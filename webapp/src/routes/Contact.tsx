@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Hero from '../components/Hero'
+import { submitContactForm } from '../calls/contact'
 
 function Contact() {
   const [submitted, setSubmitted] = useState(false)
@@ -8,15 +9,21 @@ function Contact() {
     email: '',
     message: '',
   })
+  const [error, setError] = useState<string | null>(null)
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setSubmitted(true)
-    // Here you would normally send the form data to your backend
+    setError(null)
+    try {
+      await submitContactForm(form)
+      setSubmitted(true)
+    } catch {
+      setError('Something went wrong. Please try again later.')
+    }
   }
 
   return (
@@ -70,6 +77,11 @@ function Contact() {
             </div>
             {/* Contact Form */}
             <form onSubmit={handleSubmit} className="lg:w-1/2 space-y-2 w-full">
+              {error && (
+                <div className="bg-red-100 text-red-700 px-4 py-2 rounded mb-2 text-center">
+                  {error}
+                </div>
+              )}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Name
