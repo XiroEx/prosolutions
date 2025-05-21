@@ -6,9 +6,11 @@ function Hero() {
       background: 'linear-gradient(to bottom, var(--color-secondary-light), var(--color-accent))'
       }}
     >
-      <img
-      src="https://images.unsplash.com/photo-1606964212858-c215029db704"
-      alt="City"
+      <video
+      autoPlay
+      src="/overtop.mp4"
+      loop
+      muted
       className="w-full h-48 md:h-64 object-cover opacity-50"
       style={{ objectPosition: 'center 75%' }} // Offset the cover vertically
       />

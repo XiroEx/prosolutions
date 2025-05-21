@@ -13,10 +13,12 @@ function About() {
             Whether you are a shipper looking to find reliable carriers or a carrier seeking consistent loads, our platform is designed to meet your needs. Join us in revolutionizing the way you do business in the logistics industry.
           </p>
         </div>
-        <img
-          src="https://images.unsplash.com/photo-1606964212858-c215029db704"
-          alt="Logistics Team"
+        <video
+          src="/trucking.mp4"
           className="rounded-lg shadow-lg w-full h-56 object-cover"
+          autoPlay
+          loop
+          muted
         />
       </div>
     </section>

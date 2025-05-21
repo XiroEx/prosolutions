@@ -1,3 +1,5 @@
+import { Link } from "react-router"
+
 function RequestQuote() {
   return (
     <section
@@ -11,15 +13,17 @@ function RequestQuote() {
         <p className="mb-4">
           Submit your details now to get a custom quote from our top-tier logistics and warehouse team! Streamline your operations efficiently today!
         </p>
-        <button
-          className="font-semibold px-6 py-2 rounded shadow transition"
-          style={{
-            backgroundColor: 'var(--color-accent)',
-            color: 'var(--color-primary)'
-          }}
-        >
-          Request a Quote
-        </button>
+        <Link to="/contact">
+          <button
+            className="font-semibold px-6 py-2 rounded shadow transition"
+            style={{
+              backgroundColor: 'var(--color-accent)',
+              color: 'var(--color-primary)'
+            }}
+          >
+            Request a Quote
+          </button>
+        </Link>
       </div>
     </section>
   )
