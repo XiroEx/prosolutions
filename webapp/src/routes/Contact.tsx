@@ -21,17 +21,28 @@ function Contact() {
 
   return (
     <>
-      <Hero src="/trucking.mp4" />
+      <Hero src="/trucking.mp4" 
+        title={<h2 className="text-2xl md:text-4xl font-semibold mb-2 text-[var(--color-primary)] drop-shadow-lg">
+          Contact Us
+        </h2>}
+        content={
+          <div className="flex flex-wrap justify-center gap-4 mt-2 text-lg font-medium">
+            <span style={{ color: "var(--color-primary)" }} className="drop-shadow-2xl">
+              Call, email, or use the form below to connect with our{' '}
+              <span className="text-[var(--color-secondary)]">logistics experts</span>.
+            </span>
+          </div>
+        }
+      />
       <section className="md:mt-2 bg-white rounded-lg shadow p-8">
         <div className='w-full'>
-          <h2 className="text-2xl font-bold mb-6 text-gray-900 text-center">Contact Us</h2>
           <p className="text-gray-700 text-center mb-10 max-w-3xl mx-auto">
             Have a question about our logistics solutions, need a quote, or want to discuss a custom project? 
             Fill out the form below and our team will respond promptly. We specialize in reliable, on-time delivery and tailored logistics services for businesses of all sizes.
           </p>
         </div>
         {submitted ? (
-          <div className="text-green-700 text-center font-semibold">
+          <div className="text-[var(--color-primary)] text-center font-semibold">
             Thank you for reaching out!<br />We’ll get back to you soon.
           </div>
         ) : (
