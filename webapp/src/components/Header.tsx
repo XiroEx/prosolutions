@@ -1,0 +1,27 @@
+import viteLogo from '/logo-rectangle.jpg'
+
+function Header() {
+  return (
+    <header className="border-b">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-3 gap-2">
+        <div className="flex items-center gap-3">
+          <img src={viteLogo} alt="Pro Solutions Logo" className="w-48 object-contain" />
+          <span className="font-bold text-xl tracking-tight">PRO SOLUTIONS</span>
+        </div>
+        <nav className="flex gap-6 text-sm font-medium">
+          <a href="#" className="transition" style={{ color: 'var(--color-primary)' }}>Services</a>
+          <a href="#" className="transition" style={{ color: 'var(--color-primary)' }}>Request a Quote</a>
+          <a href="#" className="transition" style={{ color: 'var(--color-primary)' }}>Contact</a>
+        </nav>
+      </div>
+      <div
+        className="text-white text-center text-xs py-1 font-semibold"
+        style={{ backgroundColor: 'var(--color-primary)' }}
+      >
+        Locations in Texas, New York, &amp; Miami
+      </div>
+    </header>
+  )
+}
+
+export default Header
