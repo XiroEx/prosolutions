@@ -4,7 +4,7 @@ import viteLogo from '/logo-rectangle.jpg'
 function Header() {
   return (
     <header className="border-b">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-3 gap-2">
+      <div className=" mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-3 gap-2">
         <div className="flex items-center gap-3">
           <Link to="/">
             <img src={viteLogo} alt="Pro Solutions Logo" className="w-48 object-contain" />

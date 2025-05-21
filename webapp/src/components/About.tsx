@@ -1,10 +1,10 @@
 function About() {
   return (
-    <section className="py-12 px-4 bg-white">
-      <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+    <section className="py-6 px-4 bg-white">
+      <div className="mx-auto grid md:grid-cols-2 gap-8 items-center lg:gap-64 lg:px-16">
         <div>
           <h3 className="text-xl font-semibold mb-2 text-gray-900">
-            Welcome to our logistics brokering platform
+            Seamless transportation, warehousing, and freight management.
           </h3>
           <p className="text-gray-700 mb-4">
             We specialize in connecting shippers and carriers to streamline transportation processes. Our innovative approach ensures efficient and cost-effective solutions for all parties involved.
