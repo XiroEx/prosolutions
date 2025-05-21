@@ -11,6 +11,7 @@ function Hero() {
       src="/overtop.mp4"
       loop
       muted
+      playsInline
       className="w-full h-48 md:h-64 object-cover opacity-50"
       style={{ objectPosition: 'center 75%' }} // Offset the cover vertically
       />

@@ -19,6 +19,7 @@ function About() {
           autoPlay
           loop
           muted
+          playsInline
         />
       </div>
     </section>
