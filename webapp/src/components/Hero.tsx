@@ -1,4 +1,4 @@
-function Hero() {
+function Hero({src}: {src?: string}) {
   return (
     <section
       className="relative"
@@ -8,7 +8,7 @@ function Hero() {
     >
       <video
       autoPlay
-      src="/overtop.mp4"
+      src={src || '/trucking.mp4'}
       loop
       muted
       playsInline
