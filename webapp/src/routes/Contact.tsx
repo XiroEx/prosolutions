@@ -30,7 +30,7 @@ function Contact() {
           Thank you for reaching out!<br />We’ll get back to you soon.
         </div>
       ) : (
-        <div className="flex flex-col lg:flex-row gap-2 lg:gap-8">
+        <div className="flex flex-col-reverse lg:flex-row gap-2 lg:gap-8">
           {/* Contact Info */}
           <div className="lg:w-1/2 flex flex-col items-center justify-center mb-8 lg:mb-0">
             <div className="bg-gray-50 rounded-lg p-6 w-full text-center shadow-sm">
