@@ -37,7 +37,7 @@ function Contact() {
               <div className="mb-4">
                 <span className="font-semibold text-gray-800">Phone:</span>
                 <br />
-                <a href="tel:5164979806" className="text-[var(--color-primary)] font-medium hover:underline">(516) 497-9806</a>
+                <a href="tel:5166702019" className="text-[var(--color-primary)] font-medium hover:underline">(516) 670-2019</a>
               </div>
               <div>
                 <span className="font-semibold text-gray-800">Email:</span>
