@@ -41,9 +41,9 @@ function Contact() {
           </div>
         }
       />
-      <section className="md:mt-2 bg-white rounded-lg shadow p-8">
+      <section className="md:mt-2 bg-white rounded-lg shadow p-8 mx-auto max-w-7xl">
         <div className='w-full'>
-          <p className="text-gray-700 text-center mb-10 max-w-3xl mx-auto">
+          <p className="text-gray-700 text-center mb-10 ">
             Have a question about our logistics solutions, need a quote, or want to discuss a custom project? 
             Fill out the form below and our team will respond promptly. We specialize in reliable, on-time delivery and tailored logistics services for businesses of all sizes.
           </p>

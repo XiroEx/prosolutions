@@ -3,7 +3,7 @@ import { Link } from "react-router"
 function RequestQuote() {
   return (
     <section
-      className="py-12 px-4"
+      className="py-12"
       style={{
         background: 'linear-gradient(to right, var(--color-primary-dark), var(--color-primary))'
       }}

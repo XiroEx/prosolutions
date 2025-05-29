@@ -6,7 +6,7 @@ function StatsServices() {
         background: 'linear-gradient(to right, var(--color-primary-dark), var(--color-primary), var(--color-primary-dark))'
       }}
     >
-      <div className=" mx-auto grid md:grid-cols-2 gap-8 items-center">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div className="text-white text-center">
           <div className="text-3xl font-bold mb-2">
             OVER 2 Million+<br />
