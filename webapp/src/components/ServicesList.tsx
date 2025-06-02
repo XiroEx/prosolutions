@@ -82,7 +82,7 @@ function ServicesList() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition overflow-hidden flex flex-col cursor-pointer hover:scale-105"
+              className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition overflow-hidden flex flex-col cursor-pointer"
               onClick={() => navigate('/contact')}
             >
               <img
