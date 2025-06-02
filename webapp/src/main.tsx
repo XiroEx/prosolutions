@@ -6,6 +6,7 @@ import App from './App'
 import Services from './routes/Services'
 import Contact from './routes/Contact'
 import Home from './routes/Home'
+import NotFound from './routes/NotFound'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'services', element: <Services /> },
       { path: 'contact', element: <Contact /> },
+      { path: '*', element: <NotFound /> },
     ],
   },
 ])
