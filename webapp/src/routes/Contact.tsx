@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Hero from '../components/Hero'
 import { submitContactForm } from '../calls/contact'
+import LoadingOverlay from '../components/LoadingOverlay'
 
 function Contact() {
   const [submitted, setSubmitted] = useState(false)
@@ -10,6 +11,7 @@ function Contact() {
     message: '',
   })
   const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState(false)
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -18,16 +20,20 @@ function Contact() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
+    setLoading(true)
     try {
       await submitContactForm(form)
       setSubmitted(true)
     } catch {
       setError('Something went wrong. Please try again later.')
+    } finally {
+      setLoading(false)
     }
   }
 
   return (
     <>
+      {loading && <LoadingOverlay />}
       <Hero src="/trucking.mp4" 
         title={<h2 className="text-2xl md:text-4xl font-semibold mb-2 text-[var(--color-primary)] drop-shadow-lg">
           Contact Us
