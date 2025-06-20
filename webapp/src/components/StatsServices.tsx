@@ -24,7 +24,7 @@ function StatsServices() {
           </div>
         </div>
         <div className="rounded-lg p-6 text-white text-center" style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}>
-          <div className="text-lg font-semibold mb-2">Access to Over 150+ Trucks</div>
+            <div className="text-lg font-semibold mb-2">Comprehensive Trucking Solutions</div>
           <ul className="text-sm space-y-1">
             <li>Refrigerated Trucks (FTL &amp; LTL)</li>
             <li>Dry Trucks (FTL &amp; LTL)</li>

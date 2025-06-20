@@ -11,6 +11,9 @@ declare global {
 }
 
 function Contact() {
+  // Detect carrier query param
+  const isCarrier = typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('carrier') === 'true';
+
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({
     name: '',
@@ -50,22 +53,33 @@ function Contact() {
       {loading && <LoadingOverlay />}
       <Hero src="/trucking.mp4" 
         title={<h2 className="text-2xl md:text-4xl font-semibold mb-2 text-[var(--color-primary)] drop-shadow-lg">
-          Contact Us
+          {isCarrier ? 'Join Our Carrier Network' : 'Contact Us'}
         </h2>}
         content={
-          <div className="flex flex-wrap justify-center gap-4 mt-2 text-lg font-medium">
-            <span style={{ color: "var(--color-primary)" }} className="drop-shadow-2xl">
-              Call, email, or use the form below to connect with our{' '}
-              <span className="text-[var(--color-secondary)]">logistics experts</span>.
-            </span>
-          </div>
+          isCarrier ? (
+            <div className="flex flex-wrap justify-center gap-4 mt-2 text-lg font-medium">
+              <span style={{ color: "var(--color-primary)" }} className="drop-shadow-2xl">
+                We are actively seeking <span className="text-[var(--color-secondary)] font-bold">OWNER OPERATORS</span> to join our nationwide carrier network.
+                Partner with us for consistent loads, fast payment, and dedicated support.
+              </span>
+            </div>
+          ) : (
+            <div className="flex flex-wrap justify-center gap-4 mt-2 text-lg font-medium">
+              <span style={{ color: "var(--color-primary)" }} className="drop-shadow-2xl">
+                Call, email, or use the form below to connect with our{' '}
+                <span className="text-[var(--color-secondary)]">logistics experts</span>.
+              </span>
+            </div>
+          )
         }
       />
       <section className="md:mt-2 bg-white rounded-lg shadow p-8 mx-auto max-w-7xl">
         <div className='w-full'>
           <p className="text-gray-700 text-center mb-10 ">
-            Have a question about our logistics solutions, need a quote, or want to discuss a custom project? 
-            Fill out the form below and our team will respond promptly. We specialize in reliable, on-time delivery and tailored logistics services for businesses of all sizes.
+            {isCarrier
+              ? 'Fill out the form below to apply as an OWNER OPERATOR. Our team will contact you with next steps to join our carrier network.'
+              : 'Have a question about our logistics solutions, need a quote, or want to discuss a custom project? Fill out the form below and our team will respond promptly. We specialize in reliable, on-time delivery and tailored logistics services for businesses of all sizes.'
+            }
           </p>
         </div>
         {submitted ? (
@@ -102,12 +116,12 @@ function Contact() {
                   {error}
                 </div>
               )}
-              {/* I'm looking for radio buttons */}
+              {/* Radio buttons */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                <label className="block text-sm font-semibold text-gray-700 mb-2 text-center">
                   I&apos;m looking for
                 </label>
-                <div className="flex gap-4 mb-2">
+                <div className="flex gap-4 mb-2 justify-center">
                   <label className="inline-flex items-center">
                     <input
                       type="radio"
@@ -128,18 +142,7 @@ function Contact() {
                       onChange={handleChange}
                       className="form-radio text-[var(--color-primary)]"
                     />
-                    <span className="ml-2">Transport</span>
-                  </label>
-                  <label className="inline-flex items-center">
-                    <input
-                      type="radio"
-                      name="service"
-                      value="E-commerce"
-                      checked={form.service === 'E-commerce'}
-                      onChange={handleChange}
-                      className="form-radio text-[var(--color-primary)]"
-                    />
-                    <span className="ml-2">E-commerce</span>
+                    <span className="ml-2">Transportation</span>
                   </label>
                 </div>
               </div>
