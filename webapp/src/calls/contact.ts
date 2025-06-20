@@ -4,6 +4,7 @@ export interface ContactFormData {
   name: string
   email: string
   message: string
+  service?: string
 }
 
 export async function submitContactForm(data: ContactFormData): Promise<void> {
@@ -12,7 +13,9 @@ export async function submitContactForm(data: ContactFormData): Promise<void> {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       source: 'Pro Solutions',
-      ...data,
+      message: `Client interested in: ${data.service || 'General Inquiry'}\n\n${data.message}`,
+      name: data.name,
+      email: data.email,
     }),
   })
   if (!res.ok) {

@@ -11,7 +11,16 @@ function StatsServices() {
           <div className="text-3xl font-bold mb-2">
             OVER 2 Million+<br />
             Sq Ft of Warehousing<br />
-            Spread Across 3 States!
+            Spread Across 4 States!
+          </div>
+          <div className="mt-3 text-base font-medium flex justify-center items-center gap-3">
+            <span>New York</span>
+            <span>&bull;</span>
+            <span>New Jersey</span>
+            <span>&bull;</span>
+            <span>Texas</span>
+            <span>&bull;</span>
+            <span>Florida</span>
           </div>
         </div>
         <div className="rounded-lg p-6 text-white text-center" style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}>

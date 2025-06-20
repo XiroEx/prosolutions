@@ -32,8 +32,15 @@ function Header() {
           {!isContact && (
             <Link
               to="/contact?carrier=true"
-              className={`transition duration-500 ${showCarrier ? 'animate-bounce opacity-100' : 'opacity-0'}`}
-              style={{ color: 'var(--color-primary)' }}
+              // Always visible, continuous pop/grow-shrink animation after delay
+              className={`transition ${
+                showCarrier ? 'animate-pop-grow' : ''
+              }`}
+              style={{
+                color: 'var(--color-primary)',
+                transitionProperty: 'color',
+                transitionDuration: '500ms',
+              }}
             >
               Become A Carrier
             </Link>

@@ -64,6 +64,15 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+@keyframes pop-grow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.animate-pop-grow {
+  animation: pop-grow 1s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

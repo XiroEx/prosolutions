@@ -3,12 +3,20 @@ import Hero from '../components/Hero'
 import { submitContactForm } from '../calls/contact'
 import LoadingOverlay from '../components/LoadingOverlay'
 
+// Add global declaration for window.gtag
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [form, setForm] = useState({
     name: '',
     email: '',
     message: '',
+    service: '', // Added service property
   })
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
@@ -24,6 +32,12 @@ function Contact() {
     try {
       await submitContactForm(form)
       setSubmitted(true)
+      // Google Ads conversion event
+      if (window?.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17099499200/H3EACPvy2tgaEMDN1tk_'
+      });
+      }
     } catch {
       setError('Something went wrong. Please try again later.')
     } finally {
@@ -88,6 +102,48 @@ function Contact() {
                   {error}
                 </div>
               )}
+              {/* I'm looking for radio buttons */}
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  I&apos;m looking for
+                </label>
+                <div className="flex gap-4 mb-2">
+                  <label className="inline-flex items-center">
+                    <input
+                      type="radio"
+                      name="service"
+                      value="Warehousing"
+                      checked={form.service === 'Warehousing'}
+                      onChange={handleChange}
+                      className="form-radio text-[var(--color-primary)]"
+                    />
+                    <span className="ml-2">Warehousing</span>
+                  </label>
+                  <label className="inline-flex items-center">
+                    <input
+                      type="radio"
+                      name="service"
+                      value="Transport"
+                      checked={form.service === 'Transport'}
+                      onChange={handleChange}
+                      className="form-radio text-[var(--color-primary)]"
+                    />
+                    <span className="ml-2">Transport</span>
+                  </label>
+                  <label className="inline-flex items-center">
+                    <input
+                      type="radio"
+                      name="service"
+                      value="E-commerce"
+                      checked={form.service === 'E-commerce'}
+                      onChange={handleChange}
+                      className="form-radio text-[var(--color-primary)]"
+                    />
+                    <span className="ml-2">E-commerce</span>
+                  </label>
+                </div>
+              </div>
+              {/* End radio buttons */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Name
