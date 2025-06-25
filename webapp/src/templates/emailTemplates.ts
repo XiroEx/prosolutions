@@ -96,6 +96,13 @@ export function generateInquiryResponseHTML(data: EmailTemplateData): string {
         a:hover {
             text-decoration: underline;
         }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
