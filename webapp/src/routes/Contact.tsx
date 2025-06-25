@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Hero from '../components/Hero'
 import { submitContactForm } from '../calls/contact'
 import { sendmail } from '../calls/sendmail'
+import { generateInquiryResponseHTML } from '../templates/emailTemplates'
 import LoadingOverlay from '../components/LoadingOverlay'
 
 // Add global declaration for window.gtag
@@ -35,29 +36,19 @@ function Contact() {
     setLoading(true)
     try {
       await submitContactForm(form)
-      setSubmitted(true)
       
       // Send general inquiry response email
       await sendmail({
         email: form.email,
         subject: 'Thank you for contacting Pro Solutions Logistics',
-        message: `Dear ${form.name},
-
-Thank you for reaching out to Pro Solutions Logistics. We have received your inquiry regarding ${form.service || 'our services'} and our team will review your message promptly.
-
-Your message:
-"${form.message}"
-
-We specialize in reliable, on-time delivery and tailored logistics services for businesses of all sizes. Our team of logistics experts will get back to you within 24 hours to discuss how we can help with your specific needs.
-
-In the meantime, feel free to contact us directly:
-Phone: (516) 670-2019
-Email: info@prosolutionlogistics.com
-
-Best regards,
-Pro Solutions Logistics Team`
+        html: generateInquiryResponseHTML({
+          name: form.name,
+          service: form.service,
+          message: form.message
+        })
       })
       
+      setSubmitted(true)
       // Google Ads conversion event
       if (window?.gtag) {
         window.gtag('event', 'conversion', {

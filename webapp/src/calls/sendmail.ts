@@ -3,7 +3,7 @@ const SENDMAIL_URL = 'https://us-central1-georgeanthonycrm.cloudfunctions.net/se
 export interface SendMailData {
   email: string
   subject: string
-  message: string
+  html: string
 }
 
 export async function sendmail(data: SendMailData): Promise<void> {
@@ -13,7 +13,7 @@ export async function sendmail(data: SendMailData): Promise<void> {
     body: JSON.stringify({
       email: data.email,
       subject: data.subject,
-      message: data.message,
+      html: data.html,
       alias: 'info@prosolutionlogistics.com'
     }),
   })
