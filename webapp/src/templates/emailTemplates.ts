@@ -151,7 +151,7 @@ export function generateInquiryResponseHTML(data: EmailTemplateData): string {
         </div>
         
         <div class="footer">
-            <p>This is an automated response. Please do not reply to this email.</p>
+            <p>This is an automated response. You may reply to this email.</p>
             <p>&copy; 2025 Pro Solutions Logistics. All rights reserved.</p>
         </div>
     </div>
