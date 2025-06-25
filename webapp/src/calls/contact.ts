@@ -16,6 +16,8 @@ export async function submitContactForm(data: ContactFormData): Promise<void> {
       message: `Client interested in: ${data.service || 'General Inquiry'}\n\n${data.message}`,
       name: data.name,
       email: data.email,
+      alias: 'info@prosolutionlogistics.com',
+      send: 'info@prosolutionlogistics.com'
     }),
   })
   if (!res.ok) {
