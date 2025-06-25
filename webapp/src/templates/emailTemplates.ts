@@ -164,5 +164,5 @@ export function generateInquiryResponseHTML(data: EmailTemplateData): string {
     </div>
 </body>
 </html>
-  `.trim()
+  `
 }
