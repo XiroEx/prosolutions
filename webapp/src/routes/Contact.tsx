@@ -136,25 +136,25 @@ function Contact() {
                   I&apos;m looking for
                 </label>
                 <div className="flex gap-4 mb-2 justify-center">
-                  <label className="inline-flex items-center">
+                  <label className="inline-flex items-center cursor-pointer">
                     <input
                       type="radio"
                       name="service"
                       value="Warehousing"
                       checked={form.service === 'Warehousing'}
                       onChange={handleChange}
-                      className="form-radio text-[var(--color-primary)]"
+                      className="w-4 h-4 appearance-none border border-gray-300 rounded-full bg-white checked:bg-red-600 checked:border-red-600 focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                     />
                     <span className="ml-2">Warehousing</span>
                   </label>
-                  <label className="inline-flex items-center">
+                  <label className="inline-flex items-center cursor-pointer">
                     <input
                       type="radio"
                       name="service"
                       value="Transport"
                       checked={form.service === 'Transport'}
                       onChange={handleChange}
-                      className="form-radio text-[var(--color-primary)]"
+                      className="w-4 h-4 appearance-none border border-gray-300 rounded-full bg-white checked:bg-red-600 checked:border-red-600 focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                     />
                     <span className="ml-2">Transportation</span>
                   </label>
